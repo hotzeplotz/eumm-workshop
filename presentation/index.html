@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+    <title>European MetroMonitor - Behind the scenes: the 'data science' parts</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/metromonitor.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h2>European MetroMonitor</h2>
+					<h3>Behind the scenes: the 'data science' parts</h3>
+				</section>
+
+				<section>
+					<h2>Outline</h2>
+          <ul class="fragment">
+            <li>Aim: from data to maps and charts</li>
+            <li>What is <em>data science</em>?</li>
+            <li>Reproducible research</li>
+            <li>Visualising data on the web: Data-Driven Documents</li>
+            <li>Working with code: git, github.com, gists</li>
+            <li>Let's build a map!</li>
+          </ul>
+				</section>
+
+				<section>
+					<h2>From data to maps and charts</h2>
+				</section>
+
+        <section>
+          <h3>From raw data...</h3>
+          <iframe width="960" height="600" src="./raw_data.html"></iframe>
+        </section>
+
+        <section>
+          <h3>To processed data...</h3>
+          <iframe width="960" height="600" src="./eumm_data.html"></iframe>
+        </section>
+
+				<section>
+					<h2>Reproducible research</h2>
+				</section>
+
+        <section>
+          <pre>
+From: "Paccoud,AM"
+To: "Rota,A"
+Date: Mon, 24 Nov 2014 16:16:16 +0000
+Subject: Cities workshop
+
+Hi Andrea,
+
+Looking at the fully extracted data, I have a quick question.
+For the sector graphs, can you confirm that the horizontal
+values are the average growth in the share of the sector and
+not the average GVA growth rate of the sector?
+
+I can't seem to find a column for the change in sector share
+between 1998 and 2007.
+
+Thanks!
+
+Antoine
+          </pre>
+        </section>
+
+				<section>
+          <h1>#@%$&amp;*#</h1>
+          <h2 class="fragment">!!!!!!!</h2>
+        </section>
+
+        <section>
+					<h3>Let's see...</h3>
+          <ul>
+            <li class="fragment">First of all, <a target="_blank" href="http://labs.lsecities.net/eumm/m/sectors/#p/sector-hvas">let's check the chart itself</a></li>
+            <li class="fragment">Which variable from the dataset do we use for the x axis of this chart?</li>
+            <li class="fragment"><a target="_blank" href="https://github.com/lsecities/metromonitor-app/blob/4cba756cae5b23b1059f2d177a64ed82b2f90656/app/assets/javascripts/app/app.js#L539">Let's check the source code</a></li>
+            <li class="fragment">The variable name doesn't sound good; but <a target="_blank" href="https://github.com/lsecities/metromonitor-data-analysis/blob/master/src/data-analysis.r#L232">let's check how it is calculated from the raw data</a></li>
+            <li class="fragment">Indeed, there <strong>is</strong> a mistake</li>
+            <li class="fragment">However, anyone could have checked our calculations</li>
+            <li class="fragment">Running the same data analysis code against the same source data must yield the same results</li>
+            <li class="fragment">And each step of the process is documented through the data analysis code</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>A famous example: The <em>Rheinart&amp;Rogoff debacle</em></h3>
+          <blockquote cite="http://blogs.lse.ac.uk/impactofsocialsciences/2013/10/23/open-data-in-economics-the-basis-of-reproducible-research/">
+            Earlier this year, Harvard economists Kenneth Rogoff and Carmen Reinhart came under fire, when students tried to replicate <a target="_blank" href="http://scholar.harvard.edu/files/rogoff/files/growth_in_time_debt_aer.pdf">Growth in the Time of Debt</a>. To the embarrassment of the authors, <a target="_blank" href="http://www.peri.umass.edu/fileadmin/pdf/working_papers/working_papers_301-350/WP322.pdf">Herndon et al. (2013)</a> found Excel coding errors and methodological flaws calling into question some of the key conclusions of the paper that drove austerity measures around the world in the aftermath of the worst financial and economic crisis since the Great Depression.
+          </blockquote>
+        </section>
+
+        <section>
+          <blockquote cite="http://blogs.lse.ac.uk/impactofsocialsciences/2013/10/23/open-data-in-economics-the-basis-of-reproducible-research/">
+          “In this age of information math errors can lead to disaster”, <a target="_blank" href="http://www.nytimes.com/2013/04/19/opinion/krugman-the-excel-depression.html?_r=0">pointed out Paul Krugman</a> as it finally became clear why fellow economists had not been able to replicate the results of Reinhart and Rogoff. In a rather controversial research field with an absence of causality identification – whether high debt causes low growth or the other way around – making the underlying data and code available <a target="_blank" href="http://blogs.lse.ac.uk/impactofsocialsciences/2013/04/24/reinhart-rogoff-revisited-why-we-need-open-data-in-economics/">has a crucial importance</a>.
+          </blockquote>
+        </section>
+
+				<section>
+					<h2>Data-Driven Documents</h2>
+          <ul>
+            <li class="fragment"><strong>D</strong>ata-<strong>D</strong>riven <strong>D</strong>ocuments: <a target="_blank" href="http://d3js.org/">D3.js</a></li>
+            <li class="fragment">Create web apps starting from data</li>
+            <li class="fragment">For example, <a target="_blank" href="https://github.com/mbostock/d3/wiki/Gallery">data visualizations</a></li>
+            <li class="fragment">Or anything else powered by some data structure or geographic data</li>
+            <li class="fragment">Such as <a target="_blank" href="http://www.nytimes.com/newsgraphics/2013/10/13/russia/">multimedia stories</a></li>
+            <li class="fragment">Or <a target="_blank" href="http://mondobd.5apps.com/">an app to identify plants via binary choices</a>...</li>
+            <li class="fragment">based on a simple <a href="https://mondobd.5apps.com/data/data.json"><em>tree</em> structure</a></li>
+          </ul>
+				</section>
+        
+				<section>
+					<h2>Revision control: Git and github.com</h2>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
