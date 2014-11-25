@@ -54,7 +54,7 @@
             <li>What is <em>data science</em>?</li>
             <li>Reproducible research</li>
             <li>Visualising data on the web: Data-Driven Documents</li>
-            <li>Working with code: git, github.com, gists</li>
+            <li>Working with code: git, GitHub, gists</li>
             <li>Let's build a map!</li>
           </ul>
 				</section>
@@ -72,6 +72,17 @@
           <h3>To processed data...</h3>
           <iframe width="960" height="600" src="./eumm_data.html"></iframe>
         </section>
+
+        <section>
+          <h3>To maps...</h3>
+          <a target="_blank" href="http://labs.lsecities.net/eumm/m/metromonitor"><img src="eumm_map.png" /></a>
+        </section>
+
+        <section>
+          <h3>And charts</h3>
+          <a target="_blank" href="http://labs.lsecities.net/eumm/m/city-types"><img src="eumm_chart.png" /></a>
+        </section>
+
 
 				<section>
 					<h2>Reproducible research</h2>
@@ -122,7 +133,7 @@ Antoine
         <section>
           <h3>A famous example: The <em>Rheinart&amp;Rogoff debacle</em></h3>
           <blockquote cite="http://blogs.lse.ac.uk/impactofsocialsciences/2013/10/23/open-data-in-economics-the-basis-of-reproducible-research/">
-            Earlier this year, Harvard economists Kenneth Rogoff and Carmen Reinhart came under fire, when students tried to replicate <a target="_blank" href="http://scholar.harvard.edu/files/rogoff/files/growth_in_time_debt_aer.pdf">Growth in the Time of Debt</a>. To the embarrassment of the authors, <a target="_blank" href="http://www.peri.umass.edu/fileadmin/pdf/working_papers/working_papers_301-350/WP322.pdf">Herndon et al. (2013)</a> found Excel coding errors and methodological flaws calling into question some of the key conclusions of the paper that drove austerity measures around the world in the aftermath of the worst financial and economic crisis since the Great Depression.
+            Earlier this year [2013, ndr], Harvard economists Kenneth Rogoff and Carmen Reinhart came under fire, when students tried to replicate <a target="_blank" href="http://scholar.harvard.edu/files/rogoff/files/growth_in_time_debt_aer.pdf">Growth in the Time of Debt</a>. To the embarrassment of the authors, <a target="_blank" href="http://www.peri.umass.edu/fileadmin/pdf/working_papers/working_papers_301-350/WP322.pdf">Herndon et al. (2013)</a> found Excel coding errors and methodological flaws calling into question some of the key conclusions of the paper that drove austerity measures around the world in the aftermath of the worst financial and economic crisis since the Great Depression.
           </blockquote>
         </section>
 
@@ -130,6 +141,7 @@ Antoine
           <blockquote cite="http://blogs.lse.ac.uk/impactofsocialsciences/2013/10/23/open-data-in-economics-the-basis-of-reproducible-research/">
           “In this age of information math errors can lead to disaster”, <a target="_blank" href="http://www.nytimes.com/2013/04/19/opinion/krugman-the-excel-depression.html?_r=0">pointed out Paul Krugman</a> as it finally became clear why fellow economists had not been able to replicate the results of Reinhart and Rogoff. In a rather controversial research field with an absence of causality identification – whether high debt causes low growth or the other way around – making the underlying data and code available <a target="_blank" href="http://blogs.lse.ac.uk/impactofsocialsciences/2013/04/24/reinhart-rogoff-revisited-why-we-need-open-data-in-economics/">has a crucial importance</a>.
           </blockquote>
+          <p>Source: <a target="_blank" href="http://blogs.lse.ac.uk/impactofsocialsciences/2013/10/23/open-data-in-economics-the-basis-of-reproducible-research/">Open Data in Economics: The Basis of Reproducible Research</a></p>
         </section>
 
 				<section>
@@ -146,10 +158,71 @@ Antoine
 				</section>
         
 				<section>
-					<h2>Revision control: Git and github.com</h2>
+          <h2>Working with code</h2>
+          <ul>
+            <li class="fragment">Tracking changes to source code and text files: <a target="_blank" href="http://git-scm.com/">the Git version control system</a></li>
+            <li class="fragment">Tracking changes makes it possible to always know who did what, when, why</li>
+            <li class="fragment">Publishing and sharing source code: <a target="_blank" href="https://github.com/">GitHub</a></li>
+            <li class="fragment">Quickly edit and share small code examples: <a target="_blank" href="https://gist.github.com/">GitHub gists</a></li>
+            <li class="fragment">...and display them nicely: <a target="_blank" href="http://bl.ocks.org/">bl.ocks.org</a></li>
 				</section>
 
-			</div>
+        <section>
+					<h2>Let's build a map!</h2>
+          <h3>Getting started</h3>
+          <ul>
+            <li>Create a free account on <a target="_blank" href="https://github.com/">GitHub</a></li>
+            <li>(or log in to your GitHub account if you already have one)</li>
+            <li>Go to the example gist: <a target="_blank" href="https://gist.github.com/hotzeplotz/a56044e141f678959005">https://gist.github.com/hotzeplotz/a56044e141f678959005</a></li>
+            <li>Click on the "Fork" button in the top right corner</li>
+            <li>You can now edit the example code in your account, saving each revision</li>
+          </ul>
+				</section>
+
+        <section>
+          <h2>Let's build a map!</h2>
+          <h3>Some bookmarks</h3>
+          <ul>
+            <li>Take a note of the gist created into your account: the address will be something like:<br/>https://gist.github.com/<strong>your_github_username</strong>/<strong>a_long_string_of_digits_and_letters</strong></li>
+            <li>To see your visualization displayed nicely, use an address assembled like this:<br/>http://bl.ocks.org/<strong>your_github_username</strong>/<strong>a_long_string_of_digits_and_letters</strong></li>
+            <li>It's easy - just replace the initial gist.github.com with bl.ocks.org</li>
+          </ul>
+        </section>
+
+         <section>
+          <h2>Let's build a map!</h2>
+          <h3>Some bookmarks - part 2</h3>
+          <ul>
+            <li>This view shows your visualization alongside the source code</li>
+            <li>For a full-screen view of your visualization, use http://bl.ocks.org/<strong>your_github_username</strong>/raw/<strong>a_long_string_of_digits_and_letters</strong> - notice the "raw" part inbetween!</li>
+          </ul>
+        </section>
+
+
+
+        <section>
+          <h2>Let's build a map!</h2>
+					<h3>Initial map setup</h3>
+          <ul>
+            <li>We have three files in this code example:</li>
+            <li><code>data-visualization.js</code> contains all the JavaScript and D3 code to build a simple map based on the European MetroMonitor data</li>
+            <li><code>index.html</code> is a minimal web page, which is then populated with map and visualization via the JavaScript code above</li>
+            <li><code>style.css</code> is a minimal stylesheet which sets the layout of the map and a few other elements</li>
+          </ul>
+				</section>
+
+        <section>
+					<h3>Initial map setup</h3>
+          <ul>
+            <li>We have three files in this code example:</li>
+            <li><code>data-visualization.js</code> contains all the JavaScript and D3 code to build a simple map based on the European MetroMonitor data</li>
+            <li><code>index.html</code> is a minimal web page, which is then populated with map and visualization via the JavaScript code above</li>
+            <li><code>style.css</code> is a minimal stylesheet which sets the layout of the map and a few other elements</li>
+          </ul>
+				</section>
+
+
+      </div>
 
 		</div>
 
