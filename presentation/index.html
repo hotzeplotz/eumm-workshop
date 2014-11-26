@@ -111,8 +111,8 @@
         <section>
           <h3>To know more</h3>
           <p>
-          <img src="http://akamaicovers.oreilly.com/images/0636920028529/cat.gif" />
-          <span>Cathy O'Neil &amp; Rachel Schutt, Doing Data Science. Straight Talk from the Frontline, O'Reilly Media, 2013.</span>
+          <a target="_blank" href="http://shop.oreilly.com/product/0636920028529.do"><img src="http://akamaicovers.oreilly.com/images/0636920028529/cat.gif" /></a>
+          <span>Cathy O'Neil &amp; Rachel Schutt, <a target="_blank" href="http://shop.oreilly.com/product/0636920028529.do">Doing Data Science. Straight Talk from the Frontline</a>, O'Reilly Media, 2013.</span>
           </p>
           <p>The first chapter can be <a target="_blank" href="http://cdn.oreillystatic.com/oreilly/booksamplers/9781449358655_sampler.pdf">downloaded as PDF</a>.</p>
         </section>
@@ -190,7 +190,7 @@ Antoine
             <li class="fragment">Or anything else powered by some data structure or geographic data</li>
             <li class="fragment">Such as <a target="_blank" href="http://www.nytimes.com/newsgraphics/2013/10/13/russia/">multimedia stories</a></li>
             <li class="fragment">Or <a target="_blank" href="http://mondobd.5apps.com/">an app to identify plants via binary choices</a>...</li>
-            <li class="fragment">based on a simple <a href="https://mondobd.5apps.com/data/data.json"><em>tree</em> structure</a></li>
+            <li class="fragment">based on a simple <a target="_blank" href="https://mondobd.5apps.com/data/data.json"><em>tree</em> structure</a></li>
           </ul>
 				</section>
 
@@ -224,8 +224,16 @@ Antoine
             <li class="fragment"><a target="_blank" href="http://geeksta.net/geeklog/exploring-expressions-emotions-github-commit-messages/">Exploring Expressions of Emotions in GitHub Commit Messages</a></li>
             <li class="fragment"><a target="_blank" href="https://osrc.dfm.io/">The Open Source Report Card</a></li>
             <li class="fragment"><a target="_blank" href="https://github.com/blog/1892-third-annual-data-challenge-winners">And more</a></li>
+            <li class="fragment">(end of digression)</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Working with code</h2>
+          <ul>
             <li class="fragment">Quickly edit and share small code examples: <a target="_blank" href="https://gist.github.com/">GitHub gists</a></li>
             <li class="fragment">...and display them nicely: <a target="_blank" href="http://bl.ocks.org/">bl.ocks.org</a></li>
+          </ul>
 				</section>
 
          <section>
@@ -238,9 +246,17 @@ Antoine
           <ul>
             <li>Create a free account on <a target="_blank" href="https://github.com/">GitHub</a></li>
             <li>(or log in to your GitHub account if you already have one)</li>
-            <li>Go to the example gist: <a target="_blank" href="https://gist.github.com/hotzeplotz/a56044e141f678959005">https://gist.github.com/hotzeplotz/a56044e141f678959005</a></li>
+            <li>Go to the example gist: <a target="_blank" href="https://gist.github.com/hotzeplotz/0199a17276be22465ad5">https://gist.github.com/hotzeplotz/0199a17276be22465ad5</a></li>
             <li>Click on the "Fork" button in the top right corner</li>
             <li>You can now edit your own version of the example code in your account; each revision is saved and can be easily accessed</li>
+          </ul>
+        </section>
+
+        <section>
+					<h2>Let's make a map!</h2>
+          <h3>Working in groups</h3>
+          <ul>
+            <li>Get together in groups of two to four students for the exercise - you may each work on a computer and cross check things, or use just one computer and work together on a single gist, as you prefer</li>
           </ul>
 				</section>
 
@@ -287,15 +303,75 @@ Antoine
 
         <section>
           <h2>Let's make a map!</h2>
-					<h3>Initial map setup</h3>
+					<h3>Checking the initial map</h3>
           <ul>
-            <li>We have three files in this code example:</li>
-            <li><code>data-visualization.js</code> contains all the JavaScript and D3 code to build a simple map based on the European MetroMonitor data</li>
-            <li><code>index.html</code> is a minimal web page, which is then populated with map and visualization via the JavaScript code above</li>
-            <li><code>style.css</code> is a minimal stylesheet which sets the layout of the map and a few other elements</li>
+            <li>Let's check how the default map looks like; if your GitHub username is XYZ and your new gist's id is abcdef123456, go to http://bl.ocks.org/XYZ/raw/abcdef123456/ to see the map</li>
+            <li>Looking good? Let's try to change some settings!</li>
           </ul>
 				</section>
 
+        <section>
+          <h2>Let's make a map!</h2>
+					<h3>Changing colours</h3>
+          <ul>
+            <li>To start editing your gist, click on the 'Edit' Button at the top</li>
+            <li>Focus on the file index.html - go to the section with several blocks commented out (in grey) with the <code>circles_fill</code> setting</li>
+            <li>Comment out the default setting (add <code>//</code> at the beginning of each line to comment out) and remove comments from the lines of one
+              of the other settings listed</li>
+            <li>When done with editing, scroll to the bottom of the page and click on the green 'Update Gist' button</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Let's make a map!</h2>
+					<h3>Changing colours</h3>
+          <ul>
+            <li>The updated app is now saved; click on Revisions (right), then 'View gist @ [something]' at the top'; look at the address bar: copy the whole address to a new tab, replacing gist.github.com with bl.ocks.org and check how the updated map at this specific revision looks like</li>
+            <li>Try other colour combinations</li>
+          </ul>
+				</section>
+
+        <section>
+          <h2>Let's make a map!</h2>
+					<h3>Plotting other variables</h3>
+          <ul>
+            <li>Focus again on the file index.html - go to the section with comments (in grey) about the <code>time_var</code> setting</li>
+            <li>Follow the instructions marked with five stars (*****) in the code itself to check other variables you could try to plot</li>
+            <li>As for the colour experiments, save the gist, check the id of the latest revision and check how things look like</li>
+            <li>Edit the index.html file again - restore <code>POPTOTT_2012</code> as <code>time_var</code> and try changing the <code>growth_var</code> now</li>
+            <li>As after any edit, save, check the id of the latest revision and check how things look like</li>
+          </ul>
+				</section>
+
+        <section>
+          <h2>Let's make a map!</h2>
+					<h3>Change the initial map position and zoom level</h3>
+          <ul>
+            <li>Focus again on the file index.html - go to the section with comments (in grey) about the <code>initial_position</code> and <code>initial_zoom</code> settings</li>
+            <li>Try setting the initial position to a specific city, zooming in more closely (zoom level 5 or 6)</li>
+          </ul>
+				</section>
+
+        <section>
+          <h2>Let's make a map!</h2>
+					<h3>Make the map's address reflect current position and zoom level</h3>
+          <ul>
+            <li>We need an external bit of code for this - start editing your gist again first</li>
+            <li>Scroll to the bottom and click the "Add file" button</li>
+            <li>As file name, enter <code>leaflet-hash.js</code></li>
+            <li>Open a new browser tab, navigate to <a target="_blank" href="https://raw.githubusercontent.com/mlevans/leaflet-hash/master/leaflet-hash.js">https://raw.githubusercontent.com/mlevans/leaflet-hash/master/leaflet-hash.js</a>, select the whole content of the file, copy it and paste it into the new file box of your gist</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Let's make a map!</h2>
+					<h3>Make the map's address reflect current position and zoom level</h3>
+          <ul>
+            <li>Remove the comment around the line of index.html where the leaflet-hash.js file is imported</li>
+            <li>And finally, remove the comment in front of the line <code>var hash = new L.Hash(map);</code> at around one-third of the file data-visualization.js of your gist</li>
+            <li>Save, preview and you should now see that the address bar gets updated every time you pan or zoom - share the exact link to a specific position and zoom level of your map!</li>
+          </ul>
+				</section>
 
       </div>
 
